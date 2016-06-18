@@ -3,7 +3,7 @@
   <p>Form 3 -spicing things up with some html5, and spying on the css (not much angular 2)</p>
    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <hr>
-      <input type="text" class="form-control" placeholder="Name" name="name" ngModel>
+      <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="namer">
       <hr>
       <textarea class="form-control" rows="4" placeholder="Description" name="description" ngModel></textarea>
          <div ngModelGroup="smallstuff" #spy>
@@ -17,6 +17,7 @@
         <p>{{spy.className}}  </p>
         <button [disabled]="!f.valid" class="btn btn-primary" >Save</button>
   </form>
+  <p>Namer: {{namer}} </p>
   <p>This is what's going to the server</p>
   <code>{{formdata}}</code>
 </div>

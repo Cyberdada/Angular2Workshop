@@ -14,7 +14,7 @@ styles: [
 
 export class Form3Component {
  formdata : string  = "";
- 
+ namer:string ="the name";
     onSubmit(v:any) {
         this.formdata = JSON.stringify(v);
         return false;

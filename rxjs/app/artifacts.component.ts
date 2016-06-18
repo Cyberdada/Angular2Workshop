@@ -57,10 +57,12 @@ export class ArtifactsComponent implements OnInit {
 			this.artifactService.getArtifacts().subscribe((res: any) => {
 				this.allArtifacts = res;
 
+
+
 				this.allArtifacts.forEach(element => {
-					let d = this.allDungeons.find((itm: any) => itm._id = element.dungeonId);
+					let d = this.allDungeons.find((itm: any) => itm._id == element.dungeonId);
 					element.dungeon = d.name;
-					let r = this.allRooms.find((itm: any) => itm._id = element.roomId);
+					let r = this.allRooms.find((itm: any) => itm._id == element.roomId);
 					element.room = r.name;
 				});
 
