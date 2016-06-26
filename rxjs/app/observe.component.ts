@@ -49,7 +49,7 @@ import {Component, OnInit} from '@angular/core';
       <p>Example stolen and mutilated from :</p>
       <a href="http://blog.jhades.org/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/">
       http://blog.jhades.org/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/</a>
-
+{{key}}
       </div>
       </div>
       </div>
@@ -72,8 +72,8 @@ export class ObserveComponent implements OnInit {
   sub1: any;
   sub2: any;
   project: string;
- 
-
+ key:any;
+keySource:any;
   constructor() {       //private pubsub: PubSubService
 	   this.observer1 = NaN;
 	   this.observer2 = -1;
@@ -82,6 +82,12 @@ export class ObserveComponent implements OnInit {
   }
 
   ngOnInit() {
+    		this.keySource = Observable.fromEvent(document.body, 'keypress');
+   this.keySource.subscribe(itm => {
+    var p = itm;
+    console.log(JSON.stringify(itm));
+    this.key =  p.key;
+   });
     //this.pubsub.Stream.subscribe(itm => this.showProject(itm));
   }
 

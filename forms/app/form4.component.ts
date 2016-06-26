@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {REACTIVE_FORM_DIRECTIVES,FormGroup, FormControl,Validators} from '@angular/forms';
-//import { ControlMessages } from './control-messages.component';
+import { ControlMessages } from './control-messages.component';
 import { ValidationService } from './validation.service';
 
 @Component({

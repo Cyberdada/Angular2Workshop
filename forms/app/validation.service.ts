@@ -32,13 +32,14 @@ export class ValidationService {
         return regexp.test(controlval) ? null : prop;
     }
 
-   static getValidatorErrorMessage(code: string) {
+   static getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
         return {
             'required': 'Required',
             'invalidCreditCard': 'Is invalid credit card number',
             'invalidEmailAddress': 'Invalid email address',
-            'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.'
-        }[code];
+            'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.',
+            'minlength': `Minimum length ${validatorValue.requiredLength}`
+        }[validatorName];
     }
    
 }

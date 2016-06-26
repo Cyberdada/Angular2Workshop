@@ -63,9 +63,7 @@ export class SearchComponent {
 	searchField: Control = new Control("");
 	results: Observable<any[]>;
 
-
 	constructor(private http: Http, fb: FormBuilder) {
-
 		this.searchForm = fb.group({ "searchField": this.searchField });
 
 		this.results = this.searchField.valueChanges

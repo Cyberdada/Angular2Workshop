@@ -11,7 +11,8 @@ export class ArtifactService {
 	 console.log("artifact service is born");
 	}
 	
-    getArtifacts() {return  this.http.get('http://adv1.azurewebsites.net/api/artifacts').map((res:any) =>res.json());  }
+    getArtifacts() {return  this.http.get('http://adv1.azurewebsites.net/api/artifacts')
+    .map((res:any) =>res.json());  }
   
    post(artifact:any):any  {
       console.log("saving artifact");

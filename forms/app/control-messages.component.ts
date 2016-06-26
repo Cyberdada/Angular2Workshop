@@ -1,5 +1,5 @@
-import { Component, Host } from '@angular/core';
-import {Control, NgFormModel } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ValidationService } from './validation.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { ValidationService } from './validation.service';
 })
 export class ControlMessages {
     controlName: string;
-    constructor(@Host() private _formDir: NgFormModel) { }
+    @Input() control: FormControl;
+    constructor() { }
 
     get errorMessage() {
         //Control can sometimes be part of a nested controlgroup
@@ -17,22 +18,23 @@ export class ControlMessages {
         //our convention being that a control within a control group 
         // will have dot notation  ie. controlgroup.control or controlgroup.controlgroup.control etc etc 
 
-        let c:any = null;
-        let ctrl = this.controlName.split(".");
-        let grp = this._formDir.form;
-        for(let i = 0; i < ctrl.length; i++) 
-        {
-           c = grp.find(ctrl[i]);
-           grp = c;
-        }        
+  //      let c:any = null;
+  //      let ctrl = this.controlName.split(".");
+  //      let grp = this._formDir.form;
+  //      for(let i = 0; i < ctrl.length; i++) 
+ //       {
+  //         c = grp.find(ctrl[i]);
+  //         grp = c;
+  //      }        
         
 
-        for (let propertyName in c.errors) {
-            if (c.errors.hasOwnProperty(propertyName) && c.touched) {
-              return ValidationService.getValidatorErrorMessage(propertyName);
-            }
-        }
-        
-        return null;
+         for (let propertyName in this.control.errors) {
+      if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+        return ValidationService.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
+      }
+    }
+    
+    return null;
+  }
     }
 }
