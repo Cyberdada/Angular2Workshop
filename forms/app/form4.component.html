@@ -6,18 +6,18 @@
  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <hr>
     <input type="text" class="form-control" placeholder="Name" formControlName="name">
-     <control-messages control="name" form="userform"></control-messages>
+     <control-messages  [control]="userForm.controls.name" form="userform"></control-messages>
     <hr>
     <textarea class="form-control" rows="4" placeholder="Description" formControlName="description" ></textarea>
     <div formGroupName="contact" >
     <input type="text" class="form-control" placeholder="email1" formControlName="email1">
-     <control-messages control="email1"></control-messages>
+     <control-messages [control]="userForm.controls.contact.controls.email1"></control-messages>
     <input type="text" class="form-control" placeholder="email2" formControlName="email2"  >
-     <control-messages control="email2"></control-messages>  
+     <control-messages [control]="userForm.controls.contact.controls.email2"></control-messages>  
     <input type="number" class="form-control" placeholder="telephonenr" formControlName="telephone" >
-    <control-messages control="telephone"></control-messages>  
+    <control-messages [control]="userForm.controls.contact.controls.telephone"></control-messages>  
     <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2" >
-    <control-messages control="telephone2"></control-messages>  
+    <control-messages [control]="userForm.controls.contact.controls.telephone2"></control-messages>  
      
      </div>
     
