@@ -1,34 +1,35 @@
 <div class="container">
   <p>Form 5 -Observing changes, listening in on valueChanges</p>
-  
- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <hr>
 
     <input type="text" class="form-control" placeholder="Name" formControlName="name">
-     <control-messages control="name"></control-messages>
+    <control-messages [control]="userForm.controls.name" form="userform"></control-messages>
     <hr>
-    <textarea class="form-control" rows="4" placeholder="Description" formControlName="description" ></textarea>
-    
-    <div formGroupName="contact" >
-    <input type="text" class="form-control" placeholder="email1" formControlName="email1">
-     <control-messages control="email1"></control-messages>
-    <input type="text" class="form-control" placeholder="email2" formControlName="email2"  >
-     <control-messages control="email2"></control-messages>  
-    <input type="number" class="form-control" placeholder="telephonenr" formControlName="telephone" >
-    <control-messages control="telephone"></control-messages>  
-    <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2" >
-     </div>
-    
-    <button [disabled]="!userForm.valid" class="btn btn-primary" >Save</button>
+    <textarea class="form-control" rows="4" placeholder="Description" formControlName="description"></textarea>
+
+    <div formGroupName="contact">
+      <input type="text" class="form-control" placeholder="email1" formControlName="email1">
+      <control-messages [control]="userForm.controls.contact.controls.email1"></control-messages>
+      <input type="text" class="form-control" placeholder="email2" formControlName="email2">
+      <control-messages [control]="userForm.controls.contact.controls.email2"></control-messages>
+      <input type="number" class="form-control" placeholder="telephonenr" formControlName="telephone">
+      <control-messages [control]="userForm.controls.contact.controls.telephone"></control-messages>
+      <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2">
+      <control-messages [control]="userForm.controls.contact.controls.telephone2"></control-messages>
+    </div>
+
+    <button [disabled]="!userForm.valid" class="btn btn-primary">Save</button>
   </form>
-  
-    <p>This is what's going to the server</p>
+
+  <p>This is what's going to the server</p>
   <code>{{formdata}}</code>
   <p>This is what eventemitter told me: All of it: </p>
   <code>{{eventEmitterData}}</code>
   <p>controlgroup</p>
   <code>{{cgroupData}}</code>
-  
-    <p>Email1</p>
+
+  <p>Email1</p>
   <code>{{email1Data}}</code>
 </div>

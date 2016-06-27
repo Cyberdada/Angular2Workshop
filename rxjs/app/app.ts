@@ -17,7 +17,7 @@ import {ArtifactDetailComponent} from './artifactdetail.component';
 @Component({
 	pipes: [AsyncPipe],
 	selector: 'my-app',
-	providers: [], //[PubSubService],
+	providers: [], 
 	directives:[ObserveComponent, SearchComponent, ArtifactsComponent, ArtifactDetailComponent], 
 	template: `
 	  	    <div class="container-fluid">

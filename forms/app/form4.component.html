@@ -2,28 +2,28 @@
   <p>Form 4 -Introducing FormGroups (and Validators.)</p>
   <p>Example builds on </p>
   <a href="http://plnkr.co/edit/6RkM0eRftf3KQpoDCktz?p=preview" target="_blank">http://plnkr.co/edit/6RkM0eRftf3KQpoDCktz?p=preview</a>
-  <p> But a lot has changed with rc2 </p>
- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+  <form [formGroup]="userForm" (submit)="onSubmit()">
     <hr>
-    <input type="text" class="form-control" placeholder="Name" formControlName="name">
-     <control-messages  [control]="userForm.controls.name" form="userform"></control-messages>
+    <input type="text" class="form-control" placeholder="Name" id="name" formControlName="name">
+    <control-messages [control]="userForm.controls.name" form="userform"></control-messages>
     <hr>
-    <textarea class="form-control" rows="4" placeholder="Description" formControlName="description" ></textarea>
-    <div formGroupName="contact" >
-    <input type="text" class="form-control" placeholder="email1" formControlName="email1">
-     <control-messages [control]="userForm.controls.contact.controls.email1"></control-messages>
-    <input type="text" class="form-control" placeholder="email2" formControlName="email2"  >
-     <control-messages [control]="userForm.controls.contact.controls.email2"></control-messages>  
-    <input type="number" class="form-control" placeholder="telephonenr" formControlName="telephone" >
-    <control-messages [control]="userForm.controls.contact.controls.telephone"></control-messages>  
-    <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2" >
-    <control-messages [control]="userForm.controls.contact.controls.telephone2"></control-messages>  
-     
-     </div>
-    
-    <button [disabled]="!userForm.valid" class="btn btn-primary" >Save</button>
+    <textarea class="form-control" rows="4" placeholder="Description" formControlName="description"></textarea>
+    <div formGroupName="contact">
+      <input type="text" class="form-control" placeholder="email1" formControlName="email1">
+      <control-messages [control]="userForm.controls.contact.controls.email1"></control-messages>
+      <input type="text" class="form-control" placeholder="email2" formControlName="email2">
+      <control-messages [control]="userForm.controls.contact.controls.email2"></control-messages>
+      <input type="number" class="form-control" placeholder="telephonenr" formControlName="telephone">
+      <control-messages [control]="userForm.controls.contact.controls.telephone"></control-messages>
+      <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2">
+      <control-messages [control]="userForm.controls.contact.controls.telephone2"></control-messages>
+
+    </div>
+
+    <button [disabled]="!userForm.valid" class="btn btn-primary">Save</button>
   </form>
-  
-    <p>This is what's going to the server</p>
+
+  <p>This is what's going to the server</p>
   <code>{{formdata}}</code>
 </div>

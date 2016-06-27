@@ -6,7 +6,7 @@ import { ValidationService } from './validation.service';
 @Component({
     selector: 'my-form4',
     templateUrl: 'app/form4.component.html', 
-    directives: [REACTIVE_FORM_DIRECTIVES],  //ControlMessages,
+    directives: [REACTIVE_FORM_DIRECTIVES,ControlMessages],  //ControlMessages,
 styles: [
         `
         .ng-invalid { border-left:5px solid #f00;}

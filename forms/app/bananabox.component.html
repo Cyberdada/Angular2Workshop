@@ -1,0 +1,25 @@
+
+<div class="container">
+  <p>This is a bananabox [(Bananas)] </p>
+   <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <hr>
+      <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="model.name" required #name="ngModel">
+       <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      <hr>
+      <textarea class="form-control" rows="4" placeholder="Description" name="description" [(ngModel)]="model.description"></textarea>
+         <div ngModelGroup="smallStuff">
+    <input type="text" class="form-control" placeholder="Name 2" name="name2" [(ngModel)]="model.smallStuff.name2">
+    <input type="text" class="form-control" placeholder="Name 3" name="name3" [(ngModel)]="model.smallStuff.name3">
+    <input type="text" class="form-control" placeholder="Name 4" name="name4" [(ngModel)]="model.smallStuff.name4">
+     </div>
+      <button  class="btn btn-primary" type="submit">Save</button>
+  </form>
+  
+  <p>My BananaBox : <p>
+    <code>{{bananastring}}</code>
+        <code>{{bananadiagnos}}</code>
+  <p>This is what's going to the server</p>
+  <code>{{formdata}}</code>
+</div>
