@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-
-import {LoginComponent} from './login.component';
 import {iCurrentUser}  from './currentuser'
 
 
@@ -12,7 +10,7 @@ import {iCurrentUser}  from './currentuser'
   	<div *ngIf="user.isAuthed" class="container-fluid"> I know you, {{user.extId}} of course :)  </div>
    </div>
   `,
-  directives: [LoginComponent]
+ 
 })
 
 
