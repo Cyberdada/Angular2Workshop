@@ -6,13 +6,13 @@
       <div class="form-group">
         <label class="col-xs-2 control-label">Name</label>
         <div class="col-xs-10">
-          <input class="form-control" [(ngModel)]="myArtifact.name" placeholder="name" />
+          <input class="form-control" [(ngModel)]="myArtifact.name" name="name" placeholder="name" />
         </div>
       </div>
       <div class="form-group">
         <label class="col-xs-2 control-label">Type</label>
 			<div class="col-xs-10">
-          <input class="form-control" [(ngModel)]="myArtifact.type" placeholder="type" />
+          <input class="form-control" [(ngModel)]="myArtifact.type" name="type" placeholder="type" />
         </div>
 
         </div>
@@ -21,7 +21,7 @@
       <div class="form-group">
         <label class="col-xs-2 control-label">Dungeon</label>
         <div class="col-xs-10">
-              <select [(ngModel)]="myArtifact.dungeonId">
+              <select [(ngModel)]="myArtifact.dungeonId" name="dungeonId">
                 <option>select</option>
                   <option *ngFor="let d of allDungeons" value="{{d._id}}">{{d?.name}}</option>
               </select>
@@ -30,7 +30,7 @@
       <div class="form-group">
         <label class="col-xs-2 control-label">Room</label>
         <div class="col-xs-10">
-              <select [(ngModel)]="myArtifact.roomId">
+              <select [(ngModel)]="myArtifact.roomId" name="roomId">
                   <option *ngFor="let r of allRooms" value="{{r._id}}">{{r?.name}}</option>
               </select>
         </div>

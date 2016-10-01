@@ -22,7 +22,7 @@ import {FormGroup, FormControl,FormBuilder} from '@angular/forms';
         <div class="col-xs-4">
 			 <form #f="ngForm">
          <div class="input-group somemarging">
-      <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-x">
+      <input type="text" class="form-control"  [formControl]="searchField" placeholder="Search..." aria-describedby="basic-x">
           <span class="input-group-addon" id="basic-x"><span class="glyphicon glyphicon-search"></span></span>
     </div>
 	  </form>
