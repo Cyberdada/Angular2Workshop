@@ -3,7 +3,6 @@ import 'rxjs/Rx';
 import {Subject} from "rxjs/Subject";
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
-import {HTTP_PROVIDERS} from '@angular/http';
 import {Component} from '@angular/core';
 import { AsyncPipe} from '@angular/common';
 import {Http, Headers} from '@angular/http';
@@ -15,10 +14,8 @@ import {ArtifactsComponent} from './artifacts.component';
 import {ArtifactDetailComponent} from './artifactdetail.component';
 
 @Component({
-	pipes: [AsyncPipe],
 	selector: 'my-app',
 	providers: [], 
-	directives:[ObserveComponent, SearchComponent, ArtifactsComponent, ArtifactDetailComponent], 
 	template: `
 	  	    <div class="container-fluid">
       <my-observer></my-observer><hr>

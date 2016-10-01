@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {REACTIVE_FORM_DIRECTIVES,FormGroup, FormControl,Validators} from '@angular/forms';
+import {FormGroup, FormControl,Validators} from '@angular/forms';
 import { ControlMessages } from './control-messages.component';
 import { ValidationService } from './validation.service';
 
 @Component({
     selector: 'my-form4',
-    templateUrl: 'app/form4.component.html', 
-    directives: [REACTIVE_FORM_DIRECTIVES,ControlMessages],  //ControlMessages,
+    templateUrl: 'app/form4.component.html',
 styles: [
         `
         .ng-invalid { border-left:5px solid #f00;}

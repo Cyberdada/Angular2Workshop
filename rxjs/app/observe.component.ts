@@ -83,7 +83,7 @@ keySource:any;
 
   ngOnInit() {
     		this.keySource = Observable.fromEvent(document.body, 'keypress');
-   this.keySource.subscribe(itm => {
+   this.keySource.subscribe((itm:any) => {
     var p = itm;
     console.log(JSON.stringify(itm));
     this.key =  p.key;

@@ -11,7 +11,7 @@ import {ArtifactService} from './artifact.service';
 })
 
 export class ArtifactDetailComponent implements OnInit {
-	@Output() edit: EventEmitter<boolean> = new EventEmitter();
+	@Output() edit: EventEmitter<boolean> = new EventEmitter<boolean>();
 	allRooms: any[];
 	allDungeons: any[];
 	allArtifacts:any[];

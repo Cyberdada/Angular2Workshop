@@ -12,17 +12,14 @@ import {BananaBox, SmallStuff} from './bananabox.model';
 export class BananaboxComponent {
     model: BananaBox;
     formdata: string = "";
+   
     onSubmit(v: any) {
         this.formdata = JSON.stringify(v);
-        this.bananastring = JSON.stringify(this.model);
+       // this.bananastring = JSON.stringify(this.model);
     }
 
     constructor() {
-
-
         this.model = new BananaBox("bongo", "bongo bongo bongo", new SmallStuff("nr1", "nr2", "nr3"));
-
-
     }
     
     get bananastring() { return JSON.stringify(this.model); }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {REACTIVE_FORM_DIRECTIVES, FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ControlMessages } from './control-messages.component';
 import { ValidationService } from './validation.service';
 
@@ -7,7 +7,6 @@ import { ValidationService } from './validation.service';
 @Component({
     selector: 'my-form5',
     templateUrl: 'app/form5.component.html',
-    directives: [REACTIVE_FORM_DIRECTIVES, ControlMessages],
     styles: [
         `
         .ng-invalid { border-left:5px solid #f00;}

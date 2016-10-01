@@ -3,17 +3,15 @@ import 'rxjs/Rx';
 import {Subject} from "rxjs/Subject";
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
-import {HTTP_PROVIDERS, Http, Headers} from '@angular/http';
+import { Http, Headers} from '@angular/http';
 import {Component} from '@angular/core';
-import { Control, ControlGroup, FormBuilder,
-FORM_DIRECTIVES, AsyncPipe} from '@angular/common';
-
-
+import {  AsyncPipe} from '@angular/common';
+import {FormGroup, FormControl,FormBuilder} from '@angular/forms';
 
 //import {PubSubService} from './project/current.project.evenEmitter';
 
 @Component({
-	pipes: [AsyncPipe],
+
 	selector: 'my-search',
 	template: `
 	  	    <div class="container-fluid">
@@ -22,9 +20,9 @@ FORM_DIRECTIVES, AsyncPipe} from '@angular/common';
         <h4>Incremental searh via reddit API</h4>
         </div>
         <div class="col-xs-4">
-			 <form [ngFormModel]='searchForm'>
+			 <form #f="ngForm">
          <div class="input-group somemarging">
-      <input type="text" ngControl="searchField" class="form-control" placeholder="Search..." aria-describedby="basic-x">
+      <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-x">
           <span class="input-group-addon" id="basic-x"><span class="glyphicon glyphicon-search"></span></span>
     </div>
 	  </form>
@@ -54,13 +52,12 @@ FORM_DIRECTIVES, AsyncPipe} from '@angular/common';
 	      .somemarging {margin-top:20px;}
 		  .box {float:left;width:140px;height:140px;padding: 5px;}
 `],
-	directives: [FORM_DIRECTIVES],
-	providers: [HTTP_PROVIDERS]
+
 })
 
 export class SearchComponent {
-	searchForm: ControlGroup;
-	searchField: Control = new Control("");
+	searchForm: FormGroup;
+	searchField: FormControl = new FormControl("");
 	results: Observable<any[]>;
 
 	constructor(private http: Http, fb: FormBuilder) {
@@ -82,7 +79,7 @@ export class SearchComponent {
 
 	translateRedditResults(items: any) {
 		let x = items.data.children;
-		return x.map(item => {
+		return x.map((item:any) => {
 			if (item && item.data && item.data.thumbnail) {
 				let thumb: string = item.data.thumbnail;
 				if (thumb.startsWith("http")) {
