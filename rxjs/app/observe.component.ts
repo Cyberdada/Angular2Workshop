@@ -1,10 +1,10 @@
 import 'rxjs/Rx';
 
 
-import {Subject} from "rxjs/Subject";
-import {Observable} from "rxjs/Observable";
-import {Observer} from "rxjs/Observer";
-import {Component, OnInit} from '@angular/core';
+import { Subject } from "rxjs/Subject";
+import { Observable } from "rxjs/Observable";
+import { Observer } from "rxjs/Observer";
+import { Component, OnInit } from '@angular/core';
 //import {PubSubService} from './project/current.project.evenEmitter';
 
 
@@ -61,10 +61,10 @@ import {Component, OnInit} from '@angular/core';
 
 
 export class ObserveComponent implements OnInit {
-  
+
   isShared: boolean;
-  isAddingNewProject: boolean; 
- 
+  isAddingNewProject: boolean;
+
   obs: Observable<number>;
 
   observer1: number;
@@ -72,31 +72,31 @@ export class ObserveComponent implements OnInit {
   sub1: any;
   sub2: any;
   project: string;
- key:any;
-keySource:any;
+  key: any;
+  keySource: any;
   constructor() {       //private pubsub: PubSubService
-	   this.observer1 = NaN;
-	   this.observer2 = -1;
+    this.observer1 = NaN;
+    this.observer2 = -1;
     this.isAddingNewProject = false;
     this.project = "";
   }
 
   ngOnInit() {
-    		this.keySource = Observable.fromEvent(document.body, 'keypress');
-   this.keySource.subscribe((itm:any) => {
-    var p = itm;
-    console.log(JSON.stringify(itm));
-    this.key =  p.key;
-   });
+    this.keySource = Observable.fromEvent(document.body, 'keypress');
+    this.keySource.subscribe((itm: any) => {
+      var p = itm;
+      console.log(JSON.stringify(itm));
+      this.key = p.key;
+    });
     //this.pubsub.Stream.subscribe(itm => this.showProject(itm));
   }
 
   gogoGadget() {
     this.obs = Observable.interval(400)
-    //	.take(4)
-      .do( (i:number)  => console.log(i.toString(10) + " being emitted"))
-    //	.share()
-    ;
+      //	.take(4)
+      .do((i: number) => console.log(i.toString(10) + " being emitted"))
+      //	.share()
+      ;
 
   }
   showProject(itm: string) {
@@ -114,11 +114,11 @@ keySource:any;
   }
 
   observe1() {
-    this.sub1 = this.obs.subscribe(value => this.observer1 = value);
+    this.sub1 = this.obs.subscribe((value:any) => this.observer1 = value);
   }
 
   observe2() {
-    this.sub2 = this.obs.subscribe(value => this.observer2 = value);
+    this.sub2 = this.obs.subscribe((value:any) => this.observer2 = value);
   }
   unobserve1() {
     this.sub1.unsubscribe();

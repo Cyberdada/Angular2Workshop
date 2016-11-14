@@ -18,7 +18,7 @@ export class ArtifactService {
       console.log("saving artifact");
      return this.http.post('http://adv1.azurewebsites.net/api/artifacts', JSON.stringify(artifact), 
      		{headers: new Headers({'Content-Type':'application/json'})
-     		}).map(res =>res.json());
+     		}).map((res:any) =>res.json());
      }
 
 }
