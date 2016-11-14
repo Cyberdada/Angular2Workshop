@@ -14,7 +14,7 @@ const TotalMoves = 6;
     template: `
     <h3>Let's play {{title}}</h3>
 	<div class="container bongo">
-    <div *ngIf="currentGameState!=1">
+    <div *ngIf="currentGameState !== tgameState.Playing">
         <button  class="btn btn-lg btn-primary btn-block" (click)="startGame()" type="submit">Play</button>
     </div>
         <div class="smallpadd">
@@ -46,6 +46,8 @@ export class HangmanComponent implements OnInit {
     nrOfMoves: number;
     currentGameState: gameState;
     uniqueLetterCount:number;
+    //Needed for html template
+    tgameState = gameState;
 
     constructor(private wordService: WordService) { }
 

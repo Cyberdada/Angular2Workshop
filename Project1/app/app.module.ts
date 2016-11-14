@@ -4,9 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {AppComponent} from './app';
 import {LoginComponent} from './login.component';
 
-
 @NgModule({
-   imports:      [ BrowserModule ,FormsModule ],
+ imports:      [ BrowserModule ,FormsModule ],
   declarations: [ AppComponent, LoginComponent ],
   bootstrap:    [ AppComponent ]
 })
