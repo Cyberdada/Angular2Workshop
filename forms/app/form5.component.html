@@ -1,6 +1,7 @@
 <div class="container">
-  <p>Form 5 -Observing changes, listening in on valueChanges</p>
-
+  <p>Form 5 -Observing changes, listening in on valueChanges, added Corys control</p>
+  <p>see : <a href="https://coryrylan.com/blog/angular-custom-form-controls-with-reactive-forms-and-ngmodel">
+   https://coryrylan.com/blog/angular-custom-form-controls-with-reactive-forms-and-ngmodel</a></p>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <hr>
 
@@ -9,7 +10,7 @@
     <hr>
     <textarea class="form-control" rows="4" placeholder="Description" formControlName="description"></textarea>
 
-    <div formGroupName="contact">
+    <div formGroupName="contact" style="padding-bottom:10px;">
       <input type="text" class="form-control" placeholder="email1" formControlName="email1">
       <control-messages [control]="userForm.controls.contact.controls.email1"></control-messages>
       <input type="text" class="form-control" placeholder="email2" formControlName="email2">
@@ -18,6 +19,7 @@
       <control-messages [control]="userForm.controls.contact.controls.telephone"></control-messages>
       <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2">
       <control-messages [control]="userForm.controls.contact.controls.telephone2"></control-messages>
+     <app-switch label="the switch" formControlName="isHen"></app-switch>
     </div>
 
     <button [disabled]="!userForm.valid" class="btn btn-primary">Save</button>

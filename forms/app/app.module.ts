@@ -7,6 +7,7 @@ import {Form2Component} from './form2.component';
 import {Form3Component} from './form3.component';
 import {Form4Component} from './form4.component';
 import {Form5Component} from './form5.component';
+import {SwitchComponent} from './appswitch.component';
 import {BananaboxComponent} from './bananabox.component';
 
 
@@ -22,6 +23,7 @@ import { ControlMessages } from './control-messages.component';
                   Form4Component,
                   Form5Component,
                   BananaboxComponent,
+                  SwitchComponent,
                   ControlMessages ],
   bootstrap: [AppComponent]
 })

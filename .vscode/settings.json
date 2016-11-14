@@ -2,7 +2,7 @@
 {
 
 
-   "typescript.tsdk": "C:\\Users\\Magnus\\node_modules\\typescript\\lib",
+   "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
 
 
 	"files.exclude": {
