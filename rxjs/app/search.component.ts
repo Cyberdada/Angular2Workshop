@@ -70,16 +70,16 @@ export class SearchComponent {
 			});
 	}
 
-	searhRedditPics(search: string) {
+	searhRedditPics(search: string){
 		let baseUrl = "https://www.reddit.com/r/pics/search.json?restrict_sr=on&q=";
 		return this.http.get(baseUrl + search)
 			.map((res:any) => res.json())
 			.map(this.translateRedditResults);
 	}
 
-	translateRedditResults(items: any) {
+	translateRedditResults(items: any):any {
 		let x = items.data.children;
-		return x.map((item:any) => {
+		return x.map((item:any):any => {
 			if (item && item.data && item.data.thumbnail) {
 				let thumb: string = item.data.thumbnail;
 				if (thumb.startsWith("http")) {
