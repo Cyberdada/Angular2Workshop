@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup,FormBuilder,FormArray, FormControl,Validators} from '@angular/forms';
 import { ControlMessages } from './control-messages.component';
 import { ValidationService } from './validation.service';
-import {EmailValidator} from './emailvalidator.directive';
 
 @Component({
     selector: 'my-form6',
@@ -50,6 +49,6 @@ export class Form6Component implements OnInit {
     };
 
     addEmail()  {
-        this.emails.push(this.fb.group({email: ['', Validators.required, EmailValidator]})) 
+        this.emails.push(this.fb.group({email: ['', Validators.required]})) 
     };
 }
