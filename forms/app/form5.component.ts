@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ControlMessages } from './control-messages.component';
 import { ValidationService } from './validation.service';
-import {SwitchComponent}  from './appswitch.component';
+import { SwitchComponent } from './appswitch.component/appswitch.component';
 
 
 @Component({
@@ -37,8 +37,8 @@ export class Form5Component implements OnInit {
                 email1: new FormControl('', [Validators.required, ValidationService.emailValidator]),
                 email2: new FormControl('', ValidationService.emptyOrEmailValidator),
                 telephone: new FormControl('', Validators.nullValidator),
-                telephone2: new FormControl('', Validators.nullValidator), 
-                isHen: new FormControl('',Validators.nullValidator )
+                telephone2: new FormControl('', Validators.nullValidator),
+                isHen: new FormControl('', Validators.nullValidator)
             })
         })
 

@@ -19,9 +19,10 @@
       <control-messages [control]="userForm.controls.contact.controls.telephone"></control-messages>
       <input type="number" class="form-control" placeholder="Alternative telephone" formControlName="telephone2">
       <control-messages [control]="userForm.controls.contact.controls.telephone2"></control-messages>
+      <div></div>
      <app-switch label="the switch" formControlName="isHen"></app-switch>
     </div>
-
+ <br />
     <button [disabled]="!userForm.valid" class="btn btn-primary">Save</button>
   </form>
 

@@ -19,6 +19,7 @@ import {BananaboxComponent} from './bananabox.component';
                  <my-bananabox *ngIf="currentForm.id === 4"></my-bananabox>
                  <my-form4 *ngIf="currentForm.id === 5"></my-form4>
                  <my-form5 *ngIf="currentForm.id === 6"></my-form5>
+                 <my-form6 *ngIf="currentForm.id === 7"></my-form6>
             </div>
   `,
   styles: [`
@@ -41,7 +42,8 @@ export class AppComponent  {
     {name:"Form with gravy", id: 3},
     {name:"[(Banana-box)]", id: 4},
     {name:"FormGroup", id: 5}, 
-    {name:"Observing", id:6}];
+    {name:"Observing", id:6},
+    {name:"Form Array", id:7}];
   currentForm = this.forms[0];
  
   onSelect(itm:any){
